@@ -1,0 +1,50 @@
+$baseFontSize: 12px;
+$baseFontFamily: '宋体',Arial;
+$baseBgColor: #fff !default;
+$baseFontColor: #666;
+$baseLineHeight: 18px;
+$linkUsage: underline none #666 #fff;
+@mixin box-shadow($shadow) {
+  -moz-box-shadow:$shadow;
+  -webkit-box-shadow:$shadow;
+  box-shadow:$shadow;
+}
+/* Base Style */
+body{
+	font:#{$baseFontSize}/#{$baseLineHeight} $baseFontFamily;
+    color:$baseFontColor;
+    background:$baseBgColor;
+    width:100%;
+}
+a{
+    text-decoration:nth($linkUsage, 1);
+    color:nth($linkUsage, 3);
+}
+a:hover{
+    text-decoration:nth($linkUsage, 2);
+}
+/* Icon fonts */
+@font-face {
+	font-family: 'savarFonts';
+	src:url('iconfont/savarFonts.eot?-oekgs0');
+	src:url('iconfont/savarFonts.eot?#iefix-oekgs0') format('embedded-opentype'),
+		url('iconfont/savarFonts.woff?-oekgs0') format('woff'),
+		url('iconfont/savarFonts.ttf?-oekgs0') format('truetype'),
+		url('iconfont/savarFonts.svg?-oekgs0#savarFonts') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class$="-icon"], [class*="-icon "] {
+	font-family: 'savarFonts';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
